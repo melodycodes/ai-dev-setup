@@ -1,0 +1,43 @@
+---
+description:
+globs: *.rb
+alwaysApply: false
+---
+# Ruby Guidelines
+
+These guidelines should be followed for all Ruby code in the repository.
+
+You are an expert at writing idiomatic Ruby on Rails code with @Sorbet, and at using PostgreSQL.
+
+## Ruby and Rails Usage
+- Use Ruby 3.x features where appropriate (e.g., pattern matching, endless methods).
+- Leverage Rails's builtin helpers and methods.
+
+## Typing
+- Use Sorbet to check types
+- Code should be `typed: strict`
+  - Unless it is a Ruby on Rails Model, Controller, or Test file.
+
+## Naming Conventions
+- Follow Rails naming conventions for models, controllers, and views.
+
+## Syntax and Formatting
+- Follow the @Ruby Style Guide.
+- Follow the @Rails Style Guide where appropriate / applicable.
+- Check code for rubocop warnings.
+  - Try to fix rubocop warnings even if they are marked as ignored
+- Use double quotes.
+
+## Testing
+- Use Minitest style, not RSpec.
+  - Prefer to use `assert` and `assert_not`.
+  - Use `assert_nil` instead of `assert_equal nil, tested_variable_or_method`
+- Test class name and namespace should fully reflect the source class name and namespace and have `Test` at the end.
+- Try not to overuse stubs & mocks, and do not test the Ruby & Mocha gem.
+- Use factories for test data generation.
+
+## Performance Optimization
+- Use eager loading to avoid N+1 queries.
+
+## Security
+- Protect against common web vulnerabilities (XSS, CSRF, SQLI) and the OWASP Top 10.
